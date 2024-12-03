@@ -1,23 +1,26 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView, View, Text, Platform, Button} from 'react-native';
+import MainLayout from '../layouts/MainLayout';
 
 export default function AboutScreen({ navigation }: { navigation: any }) {
     return (
-        <View style={styles.navContainer}>
-            <SafeAreaView style={styles.container}>
-                <View style={styles.content}>
-                    <Text style={styles.title}>My Tasks</Text>
-                    <Text style={styles.text}>Created by: Parsa</Text>
-                    <Text style={styles.text}>Date: Dec 2, 2024</Text>
-                </View>
-            </SafeAreaView>
+        <MainLayout>
+            <View style={styles.navContainer}>
+                <SafeAreaView style={styles.container}>
+                    <View style={styles.content}>
+                        <Text style={styles.title}>My Tasks</Text>
+                        <Text style={styles.text}>Created by: Parsa</Text>
+                        <Text style={styles.text}>Date: Dec 2, 2024</Text>
+                    </View>
+                </SafeAreaView>
 
-            <Button
-                title="Go to Home"
-                color="#81a1c1"
-                onPress={() => navigation.navigate('Home')}
-            />
-        </View>
+                <Button
+                    title="Go to Home"
+                    color="#81a1c1"
+                    onPress={() => navigation.navigate('Home')}
+                />
+            </View>
+        </MainLayout>
     );
 }
 

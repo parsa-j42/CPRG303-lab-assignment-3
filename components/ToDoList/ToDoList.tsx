@@ -8,7 +8,9 @@ interface ToDoListProps {
 const ToDoList = ({ tasks }: ToDoListProps) => (
     <ScrollView>
         {tasks.map((task, index) => (
-            <Pressable key={index}>
+            <Pressable key={index} style={({ pressed }) => [
+                pressed && styles.taskPressed
+            ]}>
                 <View style={[styles.task]}>
                     <Text style={styles.taskText}>{task}</Text>
                 </View>
@@ -19,15 +21,18 @@ const ToDoList = ({ tasks }: ToDoListProps) => (
 
 const styles = StyleSheet.create({
     task: {
-        padding: 10,
+        padding: 16,
         borderBottomWidth: 1,
-        borderColor: '#ccc',
+        borderBottomColor: '#e0e0e0',
     },
     completed: {
         backgroundColor: '#e0e0e0',
     },
     taskText: {
         fontSize: 16,
+    },
+    taskPressed: {
+        backgroundColor: '#d8dee9',
     },
 });
 
